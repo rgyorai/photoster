@@ -6,7 +6,7 @@
 <div id="api01">
 
 	<h2>メソッド：GET</h2>
-	<p>URL:http://nizistagram.com/api/v1/users</p>
+	<p>URL:http://photoster.com/api/v1/users</p>
 
 	<div class="panel">
 	ログイン中のユーザー情報の取得します
@@ -18,7 +18,7 @@
 
 	<script>
 	$("#api01 button").click(function(){
-		var apiPath = 'http://nizistagram.com/api/v1/';
+		var apiPath = 'http://photoster.com/api/v1/';
 
 		$.ajax({
 			url: apiPath + 'users',
@@ -80,7 +80,7 @@
 <div id="api02">
 
 	<h2>メソッド：PUT</h2>
-	<p>URL:http://nizistagram.com/api/v1/users</p>
+	<p>URL:http://photoster.com/api/v1/users</p>
 
 	<div class="panel">
 	ログイン中のユーザー情報を更新します
@@ -116,7 +116,7 @@
 
 	<script>
 	$("#api02 button").click(function(){
-		var apiPath = 'http://nizistagram.com/api/v1/';
+		var apiPath = 'http://photoster.com/api/v1/';
 
 		var data = {
 			mail : $('#api02 input[name="mail"]').val(),
@@ -186,7 +186,7 @@
 <div id="api03">
 
 	<h2>メソッド：DELETE</h2>
-	<p>URL:http://nizistagram.com/api/v1/users</p>
+	<p>URL:http://photoster.com/api/v1/users</p>
 
 	<div class="panel">
 	ログイン中のユーザー情報を削除します（退会処理）
@@ -198,7 +198,7 @@
 
 	<script>
 	$("#api03 button").click(function(){
-		var apiPath = 'http://nizistagram.com/api/v1/';
+		var apiPath = 'http://photoster.com/api/v1/';
 
 		$.ajax({
 			url: apiPath + 'users',
