@@ -1,7 +1,5 @@
 <?php
 
-define('ADMIN_ROOT_PATH', '/admin/');
-
 /**
  * Views直下のページ
  */
@@ -21,12 +19,32 @@ $app->notFound(function () use ($app) {
  * 管理画面のページ
  */
 
-//管理画面トップ
+//API管理画面トップ
 $app->get(ADMIN_ROOT_PATH.'index', function () use ($app) {
     echo $app['view']->render(ADMIN_ROOT_PATH.'index');
 });
 
-//新規登録
+//新規登録API詳細
 $app->get(ADMIN_ROOT_PATH.'register', function () use ($app) {
     echo $app['view']->render(ADMIN_ROOT_PATH.'register');
+});
+
+//ログインAPI詳細
+$app->get(ADMIN_ROOT_PATH.'login', function () use ($app) {
+    echo $app['view']->render(ADMIN_ROOT_PATH.'login');
+});
+
+//ユーザーAPI詳細
+$app->get(ADMIN_ROOT_PATH.'users', function () use ($app) {
+    echo $app['view']->render(ADMIN_ROOT_PATH.'users');
+});
+
+//フォトAPI詳細
+$app->get(ADMIN_ROOT_PATH.'photos', function () use ($app) {
+    echo $app['view']->render(ADMIN_ROOT_PATH.'photos');
+});
+
+//コメントAPI詳細
+$app->get(ADMIN_ROOT_PATH.'comments', function () use ($app) {
+    echo $app['view']->render(ADMIN_ROOT_PATH.'comments');
 });

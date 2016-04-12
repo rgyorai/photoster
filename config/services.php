@@ -9,6 +9,7 @@ use Phalcon\Mvc\View\Simple as View;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View\Engine\Volt;
+use Phalcon\Session\Adapter\Files as Session;
 
 $di = new FactoryDefault();
 
@@ -41,6 +42,15 @@ $di->setShared('view', function () use ($config) {
         )
     );
     return $view;
+});
+
+/**
+ * Start the session the first time when some component request the session service
+ */
+$di->setShared('session', function () {
+    $session = new Session();
+    $session->start();
+    return $session;
 });
 
 /**

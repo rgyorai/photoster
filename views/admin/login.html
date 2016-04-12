@@ -1,15 +1,15 @@
 {% include "admin/_header.html" %}
 
-<h1>新規登録：register</h1>
-<p>新規ユーザーの登録を行えます</p>
+<h1>ログイン：login</h1>
+<p>アプリへのログインを行えます</p>
 
 <div id="api01">
-	
+
 	<h2>メソッド：POST</h2>
-	<p>URL:http://nizistagram.com/api/v1/register</p>
+	<p>URL:http://nizistagram.com/api/v1/login</p>
 
 	<div class="panel">
-	usersテーブルに新規ユーザーを追加します
+	ログイン認証を行ってセッションIDを取得します。
 	</div>
 
 	<h3>パラメーター</h3>
@@ -50,7 +50,7 @@
 		};
 
 		$.ajax({
-			url: apiPath + 'register',
+			url: apiPath + 'login',
 			type: 'POST',
 			data: data,
 			dataType: 'json',
@@ -80,24 +80,8 @@
 					<table class="table table-striped table-bordered table-condensed">
 						<tbody>
 							<tr>
-								<td>id</td>
-								<td>ユーザーID</td>
-							</tr>
-							<tr>
-								<td>mail</td>
-								<td>メールアドレス</td>
-							</tr>
-							<tr>
-								<td>password</td>
-								<td>パスワード(ハッシュ化済み)</td>
-							</tr>
-							<tr>
-								<td>nickname</td>
-								<td>ニックネーム</td>
-							</tr>
-							<tr>
-								<td>created</td>
-								<td>登録日時</td>
+								<td>token</td>
+								<td>セッションID（リクエスト毎にリジェネレイト）</td>
 							</tr>
 						</tbody>
 					</table>

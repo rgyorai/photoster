@@ -1,6 +1,6 @@
 <?php
 
-class Photos extends \Phalcon\Mvc\Model
+class Comments extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -13,13 +13,19 @@ class Photos extends \Phalcon\Mvc\Model
      *
      * @var string
      */
+    public $pid;
+
+    /**
+     *
+     * @var string
+     */
     public $uid;
 
     /**
      *
      * @var string
      */
-    public $imagepath;
+    public $comments;
 
     /**
      *
@@ -34,14 +40,14 @@ class Photos extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'photos';
+        return 'comments';
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Photos[]
+     * @return Comments[]
      */
     public static function find($parameters = null)
     {
@@ -52,7 +58,7 @@ class Photos extends \Phalcon\Mvc\Model
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Photos
+     * @return Comments
      */
     public static function findFirst($parameters = null)
     {
